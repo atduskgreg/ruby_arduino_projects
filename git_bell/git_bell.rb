@@ -1,7 +1,8 @@
 class GitBell < ArduinoSketch
-  output_pin 6, :as => :motor
+  output_pin 12, :as => :motor
   
     def loop
+      digitalWrite motor, OFF
       if serial_available
         digitalWrite motor, ON
         delay 1000
