@@ -14,11 +14,7 @@ module Bell
     begin
       sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
       
-      print "Ring bell in"
-      5.times do |i|
-        print "...#{5-i}"
-        sleep 1
-      end
+      sleep 5
       
       sp.putc 10
       sp.close 
