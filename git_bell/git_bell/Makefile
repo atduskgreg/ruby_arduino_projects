@@ -60,7 +60,7 @@
 #
 # $Id$
 
-PORT = /dev/tty.usbserial*
+PORT = /dev/tty.usbmodem*
 TARGET = git_bell
 ARDUINO = /Applications/arduino-0012/hardware/cores/arduino
 SOFTWARE_SERIAL = /Applications/arduino-0012/hardware/libraries/SoftwareSerial

@@ -43,7 +43,7 @@ void loop();
 //////////////////////////////////////////////////////////////////////////
 // variable and accessors
 //////////////////////////////////////////////////////////////////////////
-int _motor = 6;
+int _motor = 12;
 
 int motor() {
 	return _motor;
@@ -58,7 +58,9 @@ int motor() {
 //////////////////////////////////////////////////////////////////////////
 void setup() {
 	// pin modes
-	pinMode(6, OUTPUT);
+	pinMode(12, OUTPUT);
+	// other setup
+Serial.begin(9600);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -71,6 +73,56 @@ void setup() {
 //////////////////////////////////////////////////////////////////////////
 // plugin methods
 //////////////////////////////////////////////////////////////////////////
+
+// serial helpers
+int serial_available() {
+          return (Serial.available() > 0);
+        }
+        
+        char serial_read() {
+          return (char) Serial.read();
+        }
+        
+        void serial_flush() {
+          return Serial.flush();
+        }
+
+        void serial_print( char str ) {
+          return Serial.print( str );
+        }
+
+        void serial_print( char* str ) {
+          return Serial.print( str );
+        }
+
+        void serial_print( int i ) {
+          return Serial.print( i );
+        }
+
+        void serial_print( long i ) {
+          return Serial.print( i );
+        }
+
+      	void serial_println( char* str ) {
+          return Serial.println( str );
+        }
+
+        void serial_println( char str ) {
+          return Serial.println( str );
+        }
+
+      	void serial_println( int i ) {
+          return Serial.println( i );
+        }
+
+        void serial_println( long i ) {
+          return Serial.println( i );
+        }
+
+        void serial_print( unsigned long i ) {
+          return Serial.print( i );
+        }
+
 
 //////////////////////////////////////////////////////////////////////////
 // main() function
@@ -87,5 +139,13 @@ int main() {
 //////////////////////////////////////////////////////////////////////////
 void
 loop() {
+digitalWrite(motor(), 0);
+digitalWrite(13, 0);
+if (serial_available()) {
 digitalWrite(motor(), 1);
+delay(1000);
+digitalWrite(motor(), 0);
+delay(1000);
+serial_read();
+}
 }

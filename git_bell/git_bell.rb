@@ -1,8 +1,10 @@
 class GitBell < ArduinoSketch
   output_pin 12, :as => :motor
+  serial_begin
   
     def loop
       digitalWrite motor, OFF
+      digitalWrite 13, LOW # dorkboard built-in LED on.
       if serial_available
         digitalWrite motor, ON
         delay 1000
