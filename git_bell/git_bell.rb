@@ -1,12 +1,13 @@
-  class GitBell < ArduinoSketch
-    output_pin 6, :as => :motor
-    # looking for hints?  check out the examples directory
-    # example sketches can be uploaded to your arduino with
-    # rake make:upload sketch=examples/hello_world
-    # just replace hello_world with other examples
-    
-      def loop
+class GitBell < ArduinoSketch
+  output_pin 6, :as => :motor
+  
+    def loop
+      if serial_available
         digitalWrite motor, ON
+        delay 1000
+        digitalWrite motor, OFF
+        delay 1000 # if multiple events are stacked, seperate them by 1s
+        serial_read # flush the bit
       end
-      
-  end
+    end
+end
