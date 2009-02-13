@@ -10,12 +10,16 @@ module Bell
     data_bits = 8
     stop_bits = 1
     parity = SerialPort::NONE
-
-    sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
     
-    sleep 5
-    
-    sp.putc 10
-    sp.close 
+    begin
+      sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
+      
+      sleep 5
+      
+      sp.putc 10
+      sp.close 
+    rescue Exception => e
+      puts "No bell to ring."
+    end
   end
 end
