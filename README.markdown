@@ -4,7 +4,7 @@
 
 [13 February 2009]
 
-RAD script and desktop client code for making a bell ring when you commit code with git. Includes an example post-commit hook script using the client code to ring the bell. Client code sends a serial message for which the Dorkboard is listening. Dorkboard used because of its fast startup time.
+RAD script and desktop client code for making a bell ring when you commit code with git. Includes an example post-commit hook script using the client code to ring the bell. Client code sends a serial message for which the Dorkboard is listening. Dorkboard used because of its fast startup time. See <a href="http://ozmm.org/posts/git_post_commit_for_profit.html">Defunkt's guide to post-commit hooks</a> for details on the git mechanism.
 
 <h2>Dorkboard Test</h2>
 
