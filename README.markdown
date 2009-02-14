@@ -1,5 +1,7 @@
 <h1>My RAD (Ruby Arduino Development) Projects</h1>
 
+Bell should ring.
+
 <a href="http://rad.rubyforge.org/">Get started with RAD</a>
 
 <h2>Git Bell</h2>
