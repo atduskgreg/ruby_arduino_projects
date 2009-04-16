@@ -2,6 +2,7 @@
 
 Hello from git post-commit hook.
 
+
 <a href="http://rad.rubyforge.org/">Get started with RAD</a>
 
 <h2>Git Bell</h2>
